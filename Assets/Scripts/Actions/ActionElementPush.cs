@@ -13,17 +13,28 @@ public class ActionElementPush : BaseAction {
     }
 
     public override void Activate () {
-        particles.Play();
     }
 
     public override void Deactivate () {
+    }
 
+    void Awake() {
+        //particles.Play();
+        actionMoment = Time.time;
     }
 
     void OnTriggerEnter(Collider other) {
         this.other = other.gameObject;
         if (Condition()) {
+            interactable.directionOfInteraction = PlayerController.instance.transform.forward;
+            interactable.centerOfInteraction = PlayerController.instance.transform.position;
             interactable.Activate();
+        }
+    }
+
+    void Update() {
+        if (Time.time - actionMoment > actionTime) {
+            Destroy(this.gameObject);
         }
     }
 }
