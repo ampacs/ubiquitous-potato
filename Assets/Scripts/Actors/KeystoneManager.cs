@@ -23,11 +23,13 @@ public class KeystoneManager : MonoBehaviour {
     }
 
     public void AddElementToPlayer () {
-        PlayerController.instance.GetComponent<PlayerController>().elements.Add(element);
+        if (!PlayerController.instance.GetComponent<PlayerController>().elements.Contains(element))
+            PlayerController.instance.GetComponent<PlayerController>().elements.Add(element);
     }
 
     public void RemoveElementFromPlayer () {
-        PlayerController.instance.GetComponent<PlayerController>().elements.Remove(element);
+        if (PlayerController.instance.GetComponent<PlayerController>().elements.Contains(element))
+            PlayerController.instance.GetComponent<PlayerController>().elements.Remove(element);
     }
 
     void Start() {
@@ -39,7 +41,7 @@ public class KeystoneManager : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.transform.tag == "Player") {
+        if (other.transform.tag == "Player" && other.GetComponent<PlayerController>().keystone == null) {
             Debug.Log("here");
             other.GetComponent<PlayerController>().keystone = this.gameObject;
             Deactivate();
