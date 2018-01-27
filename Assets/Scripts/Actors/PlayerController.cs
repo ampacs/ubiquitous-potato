@@ -10,7 +10,6 @@ public class PlayerController : Actor {
     public float topSpeed;
     public float maxSpeedChange;
 
-    public List<GameObject> keystones;
     public List<BaseElement> elements;
 
     private Vector3 _targetVelocity;

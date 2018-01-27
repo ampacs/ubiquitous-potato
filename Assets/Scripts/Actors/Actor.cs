@@ -2,5 +2,5 @@
 
 public class Actor : MonoBehaviour {
 
-    private KeystoneManager keystone { get; set; }
+    public GameObject keystone;
 }
