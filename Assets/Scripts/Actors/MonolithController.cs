@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class MonolithController : Actor {
 
+    public bool activated;
+    public Vector3 keystoneOffset;
 
-    // Use this for initialization
+    public BoxCollider _boxCollider;
+    public SphereCollider _sphereCollider;
+
+    public void Activate () {
+        _sphereCollider.enabled = true;
+        activated = true;
+    }
+
+    public void Deactivate () {
+        _sphereCollider.enabled = false;
+        activated = false;
+    }
+
     void Start () {
-
-    }
-    
-    // Update is called once per frame
-    void Update () {
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player"){
-
+        if (activated) {
+            Activate();
+        } else {
+            Deactivate();
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
+    void FixedUpdate() {
 
-        }
     }
 }
