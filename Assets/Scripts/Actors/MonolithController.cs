@@ -12,11 +12,14 @@ public class MonolithController : Actor {
 
     public void Activate () {
         _sphereCollider.enabled = true;
+        keystone.GetComponent<KeystoneManager>().AddElementToPlayer();
         activated = true;
     }
 
     public void Deactivate () {
         _sphereCollider.enabled = false;
+        if (keystone != null)
+            keystone.GetComponent<KeystoneManager>().RemoveElementFromPlayer();
         activated = false;
     }
 

@@ -10,7 +10,7 @@ public class PlayerController : Actor {
     public float topSpeed;
     public float maxSpeedChange;
 
-    public List<BaseElement> elements;
+    public BaseElement element;
 
     private Vector3 _targetVelocity;
     private Vector3 _lookDirection;
@@ -33,6 +33,9 @@ public class PlayerController : Actor {
     }
 
     void Update () {
+        if (element != null && Input.GetButtonDown("Submit")) {
+            element.Activate();
+        }
     }
     
     // Update is called once per frame
