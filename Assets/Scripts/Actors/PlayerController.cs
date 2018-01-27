@@ -38,7 +38,8 @@ public class PlayerController : Actor {
     // Update is called once per frame
     void FixedUpdate () {
         _targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")) * topSpeed;
-        Vector3 velocityChange = Vector3.ClampMagnitude(_targetVelocity - _rigidbody.velocity, maxSpeedChange);
+        Vector3 velocityChange = Vector3.ClampMagnitude(_targetVelocity - new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z), maxSpeedChange);
+
 
         if (velocityChange.sqrMagnitude > 0.0001f)
             _rigidbody.AddForce(velocityChange, ForceMode.VelocityChange);
