@@ -1248,8 +1248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keystone: {fileID: 0}
-  topSpeed: 3.5
-  maxSpeedChange: 3.5
+  topSpeed: 5
+  maxSpeedChange: 5
   elements: []
 --- !u!1 &1329881357
 GameObject:
