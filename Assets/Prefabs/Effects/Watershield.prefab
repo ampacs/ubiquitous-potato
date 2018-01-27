@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
   m_Layer: 0
-  m_Name: Bubbles_03
+  m_Name: Watershield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3406,7 +3406,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01085394fa2114046919eda2ec95ba26, type: 2}
+  - {fileID: 2100000, guid: db0b3b855625c9a46b6f01f27b15c918, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
