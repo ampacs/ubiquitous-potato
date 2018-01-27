@@ -31,7 +31,21 @@ public class GameManager : MonoBehaviour {
         return SceneManager.GetActiveScene().buildIndex;
     }
 
-    public float levelTimer;
+    public void LoadScene (string gameLevel){
+        SceneManager.LoadScene(gameLevel);
+        _sceneLoaded = true;
+        _sceneBeingLoaded = gameLevel;
+    }
+
+    public void LoadScene (int gameLevel){
+        SceneManager.LoadScene(gameLevel);
+        _sceneLoaded = true;
+        _sceneBeingLoaded = SceneManager.GetSceneByBuildIndex(gameLevel).name;
+    }
+
+    public void ReloadScene () {
+        LoadScene(GetCurrentLevel());
+    }
 
     void Awake () {
         if (instance == null) {
@@ -40,49 +54,5 @@ public class GameManager : MonoBehaviour {
         } else if (instance != this) {
             Destroy(gameObject);
         }
-    }
-
-    public void LoadScene (string gameLevel){
-        SceneManager.LoadScene(gameLevel);
-        _sceneLoaded = true;
-        _sceneBeingLoaded = gameLevel;
-        levelTimer = 0;
-        Time.timeScale = 1;
-    }
-
-    public void LoadScene (int gameLevel){
-        SceneManager.LoadScene(gameLevel);
-        _sceneLoaded = true;
-        _sceneBeingLoaded = SceneManager.GetSceneByBuildIndex(gameLevel).name;
-        levelTimer = 0;
-        Time.timeScale = 1;
-    }
-
-    public void ReloadScene () {
-        LoadScene(GetCurrentLevel());
-    }
-
-    public void TogglePause () {
-        if (Time.timeScale != 0) {
-            Time.timeScale = 0;
-        } else if (Time.timeScale == 0) {
-            Time.timeScale = 1;
-        }
-    }
-
-    void Update () {
-        if (playerObject != null) {
-
-        }
-    }
-
-    void LateUpdate() {
-        if (playerObject == null) {
-            playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null) {
-                
-            }
-        }
-        _sceneLoaded = false;
     }
 }

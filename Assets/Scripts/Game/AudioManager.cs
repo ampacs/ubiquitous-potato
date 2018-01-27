@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour {
         public float reverbZoneMix;
         [Space]
         [Range(0f, 5f)]
-        public float doplerLevel;
+        public float dopplerLevel;
         [Range(0f, 360f)]
         public float spread;
         public AudioRolloffMode volumeRolloff;
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour {
             source.spatialBlend  = spatialBlend;
             source.reverbZoneMix = reverbZoneMix;
 
-            source.dopplerLevel = doplerLevel;
+            source.dopplerLevel = dopplerLevel;
             source.spread       = spread;
             source.rolloffMode  = volumeRolloff;
             source.minDistance  = minDistance;
@@ -91,7 +91,7 @@ public class AudioManager : MonoBehaviour {
             spatialBlend  = 0f;
             reverbZoneMix = 1f;
 
-            doplerLevel   = 1f;
+            dopplerLevel   = 1f;
             spread        = 0f;
             volumeRolloff = AudioRolloffMode.Logarithmic;
             minDistance   = 1;
@@ -106,10 +106,10 @@ public class AudioManager : MonoBehaviour {
             spatialBlend  = Mathf.Clamp01(spatialBlend);
             reverbZoneMix = Mathf.Clamp(reverbZoneMix, 0f, 1.1f);
 
-            doplerLevel = Mathf.Clamp(doplerLevel, 0f, 5f);
-            spread      = Mathf.Clamp(spread, 0f, 360f);
-            minDistance = Mathf.Clamp(minDistance, 0f, maxDistance - 0.01f*maxDistance);
-            maxDistance = Mathf.Clamp(maxDistance, minDistance + 0.01f*minDistance, 1000000f);
+            dopplerLevel = Mathf.Clamp(dopplerLevel, 0f, 5f);
+            spread       = Mathf.Clamp(spread, 0f, 360f);
+            minDistance  = Mathf.Clamp(minDistance, 0f, maxDistance - 0.01f*maxDistance);
+            maxDistance  = Mathf.Clamp(maxDistance, minDistance + 0.01f*minDistance, 1000000f);
         }
     }
 
@@ -198,7 +198,7 @@ public class AudioManager : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        
+
     }
 
     void OnValidate() {
