@@ -23,13 +23,13 @@ public class KeystoneManager : MonoBehaviour {
     }
 
     public void AddElementToPlayer () {
-        if (!PlayerController.instance.GetComponent<PlayerController>().elements.Contains(element))
-            PlayerController.instance.GetComponent<PlayerController>().elements.Add(element);
+        if (!PlayerController.instance.GetComponent<PlayerController>().element == element)
+            PlayerController.instance.GetComponent<PlayerController>().element = element;
     }
 
     public void RemoveElementFromPlayer () {
-        if (PlayerController.instance.GetComponent<PlayerController>().elements.Contains(element))
-            PlayerController.instance.GetComponent<PlayerController>().elements.Remove(element);
+        if (PlayerController.instance.GetComponent<PlayerController>().element == element)
+            PlayerController.instance.GetComponent<PlayerController>().element = null;
     }
 
     void Start() {

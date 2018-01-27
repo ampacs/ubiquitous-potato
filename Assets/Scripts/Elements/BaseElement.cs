@@ -6,6 +6,8 @@ public class BaseElement : MonoBehaviour {
         None,Air,Earth,Fire,Water
     }
 
+    public GameObject action;
+
     public ElementType type { get; protected set; }
     [SerializeField]
     protected ElementType _type;
@@ -34,6 +36,11 @@ public class BaseElement : MonoBehaviour {
 
     public ElementType getCounterType () {
         return BaseElement.getCounterType(type);
+    }
+
+    public void Activate () {
+        BaseAction baseAction = action.GetComponent<BaseAction>();
+        GameObject currentAction = (GameObject)Instantiate(action, PlayerController.instance.transform.position + baseAction.positionOffsetMultiplier * PlayerController.instance.transform.forward, Quaternion.LookRotation(PlayerController.instance.transform.forward));
     }
 
     void Awake() {
