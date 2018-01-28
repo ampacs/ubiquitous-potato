@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerController : Actor {
 
     public static PlayerController instance { get; private set; }
+    public GameObject model;
 
     [Header("Movement Values")]
     public float topSpeed;
     public float maxSpeedChange;
 
     public BaseElement element;
+    private Animator _animator;
 
     private Vector3 _targetVelocity;
     private Vector3 _lookDirection;
@@ -25,7 +27,9 @@ public class PlayerController : Actor {
         }
     }
 
-    void Start () { 
+    void Start () {
+        if (model != null)
+            _animator = model.GetComponent<Animator>();
         //topSpeed = 5f;
         _rigidbody = GetComponent<Rigidbody>();
         //keystones = new List<Keystone>();
@@ -33,8 +37,22 @@ public class PlayerController : Actor {
     }
 
     void Update () {
+        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        int standingAnimIDs = Animator.StringToHash("Player_Standing");
+        int runningAnimIDs = Animator.StringToHash("Player_Running");
+
         if (element != null && Input.GetButtonDown("Submit")) {
             element.Activate();
+        }
+
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
+            if (stateInfo.shortNameHash == standingAnimIDs) {
+                _animator.SetTrigger("StartMoving");
+            }
+        } else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) {
+            if (stateInfo.shortNameHash == runningAnimIDs) {
+                _animator.SetTrigger("StopMoving");
+            }
         }
     }
     
