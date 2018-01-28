@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class InteractableSpawnable : BaseInteractable {
 
-    public GameObject gameObjectToSpawn;
-
     public override void Activate () {
         this.enabled = true;
         momentOfInteration = Time.time;
         if (particles != null) particles.Play();
         
     }
+
+    //void Update() {
+    //    if (Time.time - momentOfInteration > interationTime) {
+    //    }
+    //}
 }

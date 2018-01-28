@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1032718716364956}
+  m_RootGameObject: {fileID: 1761995195684918}
   m_IsPrefabParent: 1
---- !u!1 &1032718716364956
+--- !u!1 &1761995195684918
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4896387476275770}
-  - component: {fileID: 114160568964363672}
+  - component: {fileID: 4086226492624504}
+  - component: {fileID: 136574392128631628}
   m_Layer: 0
-  m_Name: WaterElement
+  m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4896387476275770
+--- !u!4 &4086226492624504
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032718716364956}
+  m_GameObject: {fileID: 1761995195684918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,16 +40,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114160568964363672
-MonoBehaviour:
+--- !u!136 &136574392128631628
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032718716364956}
+  m_GameObject: {fileID: 1761995195684918}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98d48f914991af64abe1f0263049e62f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action: {fileID: 1511796105682556, guid: c7e3666b7a1257c4e8a0058b79be6c02, type: 2}
-  _type: 4
+  m_Radius: 0.5775
+  m_Height: 1.3125
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.125, z: 0}
