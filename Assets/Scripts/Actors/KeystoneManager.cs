@@ -1,22 +1,22 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class KeystoneManager : MonoBehaviour {
 
     public bool activated;
     public BaseElement element;
     public MeshRenderer meshRenderer;
+    public ParticleSystem particleSystem;
     private SphereCollider _collider;
-    private ParticleSystem _particleSystem;
 
     public void Activate () {
-        _particleSystem.Play();
+        particleSystem.Play();
         _collider.enabled = true;
         meshRenderer.enabled = true;
         activated = true;
     }
 
     public void Deactivate () {
-        _particleSystem.Stop();
+        particleSystem.Stop();
         _collider.enabled = false;
         meshRenderer.enabled = false;
         activated = false;
@@ -34,7 +34,6 @@ public class KeystoneManager : MonoBehaviour {
 
     void Start() {
         _collider = GetComponent<SphereCollider>();
-        _particleSystem = GetComponent<ParticleSystem>();
         if (activated)
             Activate();
         else Deactivate();

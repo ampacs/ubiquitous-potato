@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 4296346654719914}
   - component: {fileID: 33682717172011176}
   - component: {fileID: 23389921030917134}
-  - component: {fileID: 64116805278930312}
+  - component: {fileID: 135197670534063778}
+  - component: {fileID: 114326857018820456}
   m_Layer: 0
   m_Name: KeyStone_Air
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292371073434322}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.54, y: 0.74, z: 9.81}
+  m_LocalPosition: {x: 1.28, y: 0.88, z: 2.98}
   m_LocalScale: {x: 0.002006896, y: 0.0018544878, z: 0.002006895}
   m_Children:
   - {fileID: 4330982301097562}
@@ -87,7 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c6d890b9a5554f24fa9bebba8c7112fb, type: 2}
+  - {fileID: 2100000, guid: a3615f3163e1907468b44bf1cc1cd10d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,20 +115,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292371073434322}
   m_Mesh: {fileID: 4300000, guid: 802109886e435ec4896bcea59e952e92, type: 3}
---- !u!64 &64116805278930312
-MeshCollider:
+--- !u!114 &114326857018820456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292371073434322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054c19b8d579ff04db57956bea270754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 1
+  element: {fileID: 114347095949701258, guid: b0191f5d918bea54e8117679b2aefc18, type: 2}
+  meshRenderer: {fileID: 23389921030917134}
+  particleSystem: {fileID: 198484062156920752}
+--- !u!135 &135197670534063778
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1292371073434322}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 802109886e435ec4896bcea59e952e92, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198484062156920752
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -188,7 +202,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 2145569612
+  randomSeed: 1037993061
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -463,7 +477,7 @@ ParticleSystem:
     startRotationX:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.5707963
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -583,10 +597,10 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    randomizeRotationDirection: 0
-    maxNumParticles: 1
+    randomizeRotationDirection: 1
+    maxNumParticles: 2
     size3D: 0
-    rotation3D: 0
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
@@ -3528,13 +3542,13 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 1
+  m_MaxParticleSize: 2
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
-  m_RenderAlignment: 0
+  m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_VertexStreams: 0001030405
