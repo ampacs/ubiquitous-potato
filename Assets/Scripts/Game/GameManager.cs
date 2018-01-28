@@ -6,13 +6,25 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance { get; private set; }
+    public bool playerHasWonGame = false;
+    public Transform respawnTransform;
     public GameObject playerObject;
+    public PlayerHealthManager playerHealthManager;
     private bool _sceneLoaded = false;
     public bool SceneLoaded { get; private set; }
     private string _sceneBeingLoaded;
 
-    public GameObject GetPlayer() {
-        return GameObject.FindGameObjectWithTag("Player");
+    public void GetPlayer() {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+            playerHealthManager = playerObject.GetComponent<PlayerHealthManager>();
+    }
+
+    public void GetRespawn() {
+        GameObject respawn = GameObject.FindGameObjectWithTag("Respawn");
+        if (respawn != null) {
+            respawnTransform = respawn.transform;
+        }
     }
 
     public bool HasSceneLoaded () {
@@ -39,18 +51,26 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(gameLevel);
         _sceneLoaded = true;
         _sceneBeingLoaded = gameLevel;
-        playerObject = GetPlayer();
+        GetPlayer();
+        GetRespawn();
     }
 
     public void LoadScene (int gameLevel){
         SceneManager.LoadScene(gameLevel);
         _sceneLoaded = true;
         _sceneBeingLoaded = SceneManager.GetSceneByBuildIndex(gameLevel).name;
-        playerObject = GetPlayer();
+        GetPlayer();
+        GetRespawn();
     }
 
     public void ReloadScene () {
         LoadScene(GetCurrentLevel());
+    }
+
+    public void RespawnPlayer() {
+        playerObject.transform.position = respawnTransform.position;
+        playerHealthManager.hp = 100;
+        playerHealthManager.alive = true;
     }
 
     void Awake () {
@@ -63,10 +83,16 @@ public class GameManager : MonoBehaviour {
     }
 
     void Start() {
-        playerObject = GetPlayer();
+        GetPlayer();
+        GetRespawn();
     }
 
     void Update() {
+        if (playerObject == null) {
+            GetPlayer();
+            GetRespawn();
+        }
+
         if (GetCurrentLevel() == "Menu") {
             if (Input.GetButtonDown("Submit")) {
                 LoadScene("MapWorld");
@@ -75,6 +101,15 @@ public class GameManager : MonoBehaviour {
             if (Input.GetButtonDown("Cancel")) {
                 LoadScene("Menu");
             }
+        }
+
+        if (playerHasWonGame) {
+            playerHasWonGame = false;
+            LoadScene("Win");
+        }
+
+        if (playerHealthManager != null && !playerHealthManager.alive) {
+            RespawnPlayer();
         }
     }
 }
