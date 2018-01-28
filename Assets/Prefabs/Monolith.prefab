@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4401795696544710}
   - component: {fileID: 114027870193545392}
   m_Layer: 0
-  m_Name: Monolith2
+  m_Name: Monolith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

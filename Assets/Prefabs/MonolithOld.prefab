@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4213671968473948}
   - component: {fileID: 114030619528363280}
   m_Layer: 0
-  m_Name: Monolith
+  m_Name: MonolithOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,8 +157,11 @@ MonoBehaviour:
   keystone: {fileID: 0}
   activated: 0
   keystoneOffset: {x: 0, y: 0, z: 0}
-  _boxCollider: {fileID: 0}
-  _sphereCollider: {fileID: 0}
+  boxCollider: {fileID: 0}
+  sphereCollider: {fileID: 0}
+  meshRenderer: {fileID: 0}
+  materials: []
+  particleSystems: []
 --- !u!198 &198018388977356510
 ParticleSystem:
   m_ObjectHideFlags: 1
