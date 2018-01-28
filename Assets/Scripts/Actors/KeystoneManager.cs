@@ -9,7 +9,7 @@ public class KeystoneManager : MonoBehaviour {
     private SphereCollider _collider;
 
     public void Activate () {
-        particleSystem.Play();
+        if (particleSystem != null) particleSystem.Play();
         _collider.enabled = true;
         meshRenderer.enabled = true;
         activated = true;
