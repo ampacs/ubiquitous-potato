@@ -6,6 +6,7 @@ public abstract class BaseInteractable : MonoBehaviour {
     public bool activated = false;
     public GameInteraction interaction;
     public ParticleSystem particles;
+    public MeshRenderer meshRenderer;
     public string[] soundEffects;
     public Vector3 centerOfInteraction;
     public Vector3 directionOfInteraction;

@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour {
     public bool SceneLoaded { get; private set; }
     private string _sceneBeingLoaded;
 
+    public GameObject GetPlayer() {
+        return GameObject.FindGameObjectWithTag("Player");
+    }
+
     public bool HasSceneLoaded () {
         return _sceneLoaded;
     }
@@ -35,12 +39,14 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(gameLevel);
         _sceneLoaded = true;
         _sceneBeingLoaded = gameLevel;
+        playerObject = GetPlayer();
     }
 
     public void LoadScene (int gameLevel){
         SceneManager.LoadScene(gameLevel);
         _sceneLoaded = true;
         _sceneBeingLoaded = SceneManager.GetSceneByBuildIndex(gameLevel).name;
+        playerObject = GetPlayer();
     }
 
     public void ReloadScene () {
@@ -53,6 +59,22 @@ public class GameManager : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         } else if (instance != this) {
             Destroy(gameObject);
+        }
+    }
+
+    void Start() {
+        playerObject = GetPlayer();
+    }
+
+    void Update() {
+        if (GetCurrentLevel() == "Menu") {
+            if (Input.GetButtonDown("Submit")) {
+                LoadScene("MapWorld");
+            }
+        } else {
+            if (Input.GetButtonDown("Cancel")) {
+                LoadScene("Menu");
+            }
         }
     }
 }

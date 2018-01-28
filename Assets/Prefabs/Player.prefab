@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 54838786689643096}
   - component: {fileID: 114147127003635654}
   - component: {fileID: 114005067409473080}
+  - component: {fileID: 114752488971258424}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204587027151822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4827378352853470}
@@ -293,10 +294,14 @@ MonoBehaviour:
   activated: 0
   interaction: 3
   particles: {fileID: 0}
+  meshRenderer: {fileID: 0}
   soundEffects: []
   centerOfInteraction: {x: 0, y: 0, z: 0}
   directionOfInteraction: {x: 0, y: 0, z: 0}
   interationTime: 1
+  isShielded: 0
+  shieldElement: {fileID: 114160568964363672, guid: a05776e5106c24240860722782a2030a,
+    type: 2}
   shieldObject: {fileID: 1761995195684918, guid: a116198a9e332484e881870af0c0ebcf,
     type: 2}
 --- !u!114 &114147127003635654
@@ -536,6 +541,23 @@ MonoBehaviour:
     m_PreInfinity: 1
     m_PostInfinity: 1
     m_RotationOrder: 0
+--- !u!114 &114752488971258424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204587027151822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573c2df851390674c9e59b821f6a9b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldedByAir: 0
+  shieldedByEarth: 0
+  shieldedByFire: 0
+  shieldedByWater: 0
+  alive: 1
+  hp: 100
 --- !u!136 &136298495249657830
 CapsuleCollider:
   m_ObjectHideFlags: 1

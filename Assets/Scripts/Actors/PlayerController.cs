@@ -21,7 +21,7 @@ public class PlayerController : Actor {
     void Awake () {
         if (instance == null) {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         } else if (instance != this) {
             Destroy(gameObject);
         }

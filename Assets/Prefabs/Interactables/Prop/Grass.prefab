@@ -155,7 +155,8 @@ MonoBehaviour:
   activated: 0
   interaction: 0
   particles: {fileID: 0}
+  meshRenderer: {fileID: 0}
   soundEffects: []
   centerOfInteraction: {x: 0, y: 0, z: 0}
   directionOfInteraction: {x: 0, y: 0, z: 0}
-  interationTime: 2
+  interationTime: 1

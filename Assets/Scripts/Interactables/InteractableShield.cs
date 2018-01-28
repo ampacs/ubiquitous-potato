@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractableShield : BaseInteractable {
 
+    public bool isShielded;
+    public BaseElement shieldElement;
     public GameObject shieldObject;
     private GameObject instantiatedGameObject;
     public override void Activate () {
@@ -19,8 +21,12 @@ public class InteractableShield : BaseInteractable {
     }
 
     void Update() {
+        isShielded = false;
         if (instantiatedGameObject != null && Time.time - momentOfInteration > interationTime) {
             Destroy(instantiatedGameObject);
+        }
+        if (instantiatedGameObject != null) {
+            isShielded = true;
         }
     }
 }
