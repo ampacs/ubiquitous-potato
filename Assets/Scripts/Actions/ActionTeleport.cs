@@ -38,6 +38,7 @@ public class ActionTeleport : MonoBehaviour {
     public Transform sideA;
     public Transform sideB;
 
+    public string teleportSound;
 
     //private bool jetlag;
 
@@ -55,6 +56,7 @@ public class ActionTeleport : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            AudioManager.instance.Play(teleportSound);
             if (this.transform == sideA)
                 other.transform.position = sideB.position + TELEPORT_EXIT_DRECTION.West.UnitVector();
             else

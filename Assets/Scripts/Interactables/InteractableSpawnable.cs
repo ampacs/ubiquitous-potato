@@ -8,7 +8,7 @@ public class InteractableSpawnable : BaseInteractable {
         this.enabled = true;
         momentOfInteration = Time.time;
         if (particles != null) particles.Play();
-        
+        //AudioManager.instance.Play(soundEffects[0]);
     }
 
     //void Update() {

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance { get; private set; }
+    public string ambientSound;
+    public string respawnSound;
     public bool playerHasWonGame = false;
     public Transform respawnTransform;
     public GameObject playerObject;
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour {
         if (GetCurrentLevel() == "Menu") {
             if (Input.GetButtonDown("Submit")) {
                 LoadScene("MapWorld");
+                AudioManager.instance.Play(ambientSound);
             }
         } else {
             if (Input.GetButtonDown("Cancel")) {
@@ -110,6 +113,7 @@ public class GameManager : MonoBehaviour {
 
         if (playerHealthManager != null && !playerHealthManager.alive) {
             RespawnPlayer();
+            AudioManager.instance.Play(respawnSound);
         }
     }
 }

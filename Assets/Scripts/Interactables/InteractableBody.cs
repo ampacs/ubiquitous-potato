@@ -11,6 +11,7 @@ public class InteractableBody : BaseInteractable {
         Rigidbody rigidbody = this.gameObject.GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         rigidbody.AddForceAtPosition(directionOfInteraction * forceMultiplier, centerOfInteraction, ForceMode.Impulse);
+        //AudioManager.instance.Play(soundEffects[0]);
     }
 
     void Update() {

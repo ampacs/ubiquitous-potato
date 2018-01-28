@@ -20,6 +20,7 @@ public class ActionElementSpawn : BaseAction {
     void Awake() {
         //particles.Play();
         actionMoment = Time.time;
+        AudioManager.instance.Play(soundEffects[0]);
     }
 
     void Start() {
@@ -33,6 +34,7 @@ public class ActionElementSpawn : BaseAction {
 
     void Update() {
         if (Time.time - actionMoment > actionTime) {
+            AudioManager.instance.Stop(soundEffects[0]);
             Destroy(this.gameObject);
         }
     }

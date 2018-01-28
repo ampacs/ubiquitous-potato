@@ -18,6 +18,7 @@ public class InteractableShield : BaseInteractable {
         capsule.height = PlayerController.instance.GetComponent<CapsuleCollider>().height*1.05f;
         capsule.center = new Vector3(0f, 2*0.05f*PlayerController.instance.GetComponent<CapsuleCollider>().height, 0f);
         instantiatedGameObject = (GameObject)Instantiate(shieldObject, PlayerController.instance.transform.position, transform.rotation, PlayerController.instance.transform);
+        //AudioManager.instance.Play(soundEffects[0]);
     }
 
     void Update() {

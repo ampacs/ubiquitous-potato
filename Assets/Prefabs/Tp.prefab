@@ -219,8 +219,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1311473499277030}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53, y: 0.2, z: -20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 35.91, y: -0.019999996, z: 40.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4526761684394590}
@@ -533,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sideA: {fileID: 4952700834867776}
   sideB: {fileID: 0}
+  teleportSound: Teleport
 --- !u!198 &198802930438756818
 ParticleSystem:
   m_ObjectHideFlags: 1

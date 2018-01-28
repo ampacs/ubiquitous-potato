@@ -71,7 +71,8 @@ MonoBehaviour:
   positionOffsetMultiplier: 1.5
   actionPositionOffset: {x: 0, y: 0, z: 0}
   particles: {fileID: 198442309817790272}
-  soundEffects: []
+  soundEffects:
+  - EarthAction
   gameObjectToSpawn: {fileID: 1852525230949030, guid: 18a279fff86ac61459760eb7f3f2e95c,
     type: 2}
 --- !u!198 &198442309817790272

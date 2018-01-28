@@ -71,7 +71,8 @@ MonoBehaviour:
   positionOffsetMultiplier: 1
   actionPositionOffset: {x: 0, y: 0, z: 0}
   particles: {fileID: 198254256668756730}
-  soundEffects: []
+  soundEffects:
+  - AirAction
 --- !u!198 &198254256668756730
 ParticleSystem:
   m_ObjectHideFlags: 1
