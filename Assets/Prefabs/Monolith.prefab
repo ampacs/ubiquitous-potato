@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4644883534809374}
   - component: {fileID: 198199792091444338}
   - component: {fileID: 199449188161191884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MonolithAir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575584079465044}
   - component: {fileID: 65431868579268792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4770281270330868}
   - component: {fileID: 135831828231725716}
   - component: {fileID: 114814598380591178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TransmitTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4545212430296192}
   - component: {fileID: 198213460100882548}
   - component: {fileID: 199717303452051988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MonolithFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401795696544710}
   - component: {fileID: 114027870193545392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Monolith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4627378032062530}
   - component: {fileID: 198320554919436266}
   - component: {fileID: 199663346097083594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MonolithWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4001126995341320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ParticleSystems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4959276379102032}
   - component: {fileID: 198884805711560120}
   - component: {fileID: 199927385240861084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MonolithEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 4488311639015580}
   - component: {fileID: 33133965828918624}
   - component: {fileID: 23289356773117920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 4857324782273496}
   - component: {fileID: 65444899301976214}
   - component: {fileID: 114243331112624126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ContactTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,8 +200,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781782623345748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 3.25, z: 0}
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: -11.2, y: 2.73, z: -6.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4001126995341320}
@@ -211,7 +211,7 @@ Transform:
   - {fileID: 4488311639015580}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4488311639015580
 Transform:
   m_ObjectHideFlags: 1
@@ -505,7 +505,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 864646148
+  randomSeed: -796045297
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -657,7 +657,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 38
+      scalar: 43
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3866,7 +3866,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -508563041
+  randomSeed: 498503386
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4018,7 +4018,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 38
+      scalar: 43
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7379,7 +7379,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 38
+      scalar: 43
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10588,7 +10588,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1915549770
+  randomSeed: 1039784728
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10740,7 +10740,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 38
+      scalar: 43
       minScalar: 1
       maxCurve:
         serializedVersion: 2

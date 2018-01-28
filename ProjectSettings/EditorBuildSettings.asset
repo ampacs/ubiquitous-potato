@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapWorld.unity
     guid: 08505b3cbec06f2489337fc4349c7b3e
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 636163744e5209344915785a8eeb5d72
