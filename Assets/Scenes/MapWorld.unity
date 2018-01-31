@@ -465,6 +465,14 @@ Prefab:
       propertyPath: teleportSound
       value: Teleport
       objectReference: {fileID: 0}
+    - target: {fileID: 4952700834867776, guid: ecad0a54112d0a748834d4efabb318d4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -19.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952700834867776, guid: ecad0a54112d0a748834d4efabb318d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 52.91
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecad0a54112d0a748834d4efabb318d4, type: 2}
   m_IsPrefabParent: 0
