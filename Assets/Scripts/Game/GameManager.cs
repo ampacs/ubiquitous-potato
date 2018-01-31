@@ -106,6 +106,9 @@ public class GameManager : MonoBehaviour {
             if (Input.GetButtonDown("Cancel")) {
                 LoadScene("Menu");
             }
+            if (!AudioManager.instance.IsPlaying(ambientSound)) {
+                AudioManager.instance.Play(ambientSound);
+            }
         }
 
         if (playerHasWonGame) {
