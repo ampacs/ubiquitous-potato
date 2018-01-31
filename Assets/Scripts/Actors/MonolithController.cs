@@ -62,7 +62,7 @@ public class MonolithController : Actor {
         } else {
             Deactivate();
         }
-        defaultMaterial = meshRenderer.material;
+        defaultMaterial = meshRenderer.sharedMaterial;
     }
 
     void FixedUpdate() {

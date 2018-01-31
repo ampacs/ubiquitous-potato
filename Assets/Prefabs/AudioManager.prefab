@@ -64,7 +64,7 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 0
     priority: 128
-    volume: 1
+    volume: 0.1
     pitch: 1
     stereoPan: 0
     spatialBlend: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 0
     priority: 128
-    volume: 1
+    volume: 0.5
     pitch: 1
     stereoPan: 0
     spatialBlend: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 0
     priority: 128
-    volume: 1
+    volume: 0.5
     pitch: 1
     stereoPan: 0
     spatialBlend: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 1
     priority: 128
-    volume: 0.1
+    volume: 0.08
     pitch: 1
     stereoPan: 0
     spatialBlend: 0

@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (playerObject == null) {
             GetPlayer();
+        }
+        if (respawnTransform == null) {
             GetRespawn();
         }
 
