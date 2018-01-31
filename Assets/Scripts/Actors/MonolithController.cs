@@ -9,7 +9,8 @@ public class MonolithController : Actor {
 
     public BoxCollider boxCollider;
     public SphereCollider sphereCollider;
-    public MeshRenderer meshRenderer;
+    private MeshRenderer[] _meshRenderers;
+    private MeshRenderer _meshRenderer;
 
     public Material[] materials;
     public ParticleSystem[] particleSystems;
@@ -17,34 +18,40 @@ public class MonolithController : Actor {
     private Material defaultMaterial;
 
     public void Activate () {
+        Debug.Log("Activated!");
         sphereCollider.enabled = true;
         keystone.GetComponent<KeystoneManager>().AddElementToPlayer();
         activated = true;
 
+        Debug.Log(keystone.GetComponent<KeystoneManager>().element.GetComponent<BaseElement>().type.ToString());
+
         switch (keystone.GetComponent<KeystoneManager>().element.GetComponent<BaseElement>().type) {
             case BaseElement.ElementType.Air:
                 particleSystems[0].Play();
-                meshRenderer.material = materials[0];
+                SetMaterialInChildren(materials[0]);
                 break;
             case BaseElement.ElementType.Earth:
                 particleSystems[1].Play();
-                meshRenderer.material = materials[1];
+                SetMaterialInChildren(materials[1]);
                 break;
             case BaseElement.ElementType.Fire:
                 particleSystems[2].Play();
-                meshRenderer.material = materials[2];
+                SetMaterialInChildren(materials[2]);
+                //_meshRenderer.materials = new Material[]{materials[2]};
+                //_meshRenderer.material = materials[2];
                 break;
             case BaseElement.ElementType.Water:
                 particleSystems[3].Play();
-                meshRenderer.material = materials[3];
+                SetMaterialInChildren(materials[3]);
                 break;
             default:
-                meshRenderer.material = materials[4];
+                SetMaterialInChildren(materials[4]);
                 break;
         }
     }
 
     public void Deactivate () {
+        Debug.Log("Deactivated!");
         sphereCollider.enabled = false;
         if (keystone != null)
             keystone.GetComponent<KeystoneManager>().RemoveElementFromPlayer();
@@ -53,16 +60,27 @@ public class MonolithController : Actor {
         for (int i = 0; i < particleSystems.Length; i++) {
             particleSystems[i].Stop();
         }
-        meshRenderer.material = materials[4];
+        SetMaterialInChildren(materials[4]);
+    }
+
+    private void SetMaterialInChildren (Material material) {
+        if (_meshRenderers != null)
+            for (int i = 0; i < _meshRenderers.Length; i++) {
+                _meshRenderers[i].material = material;
+            }
     }
 
     void Start () {
+        defaultMaterial = materials[4];
+        _meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        Debug.Log("** " + _meshRenderers.Length);
+        SetMaterialInChildren(materials[4]);
+
         if (activated) {
             Activate();
         } else {
             Deactivate();
         }
-        defaultMaterial = meshRenderer.sharedMaterial;
     }
 
     void FixedUpdate() {
