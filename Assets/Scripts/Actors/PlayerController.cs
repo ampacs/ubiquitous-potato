@@ -7,6 +7,8 @@ public class PlayerController : Actor {
     public static PlayerController instance { get; private set; }
     public GameObject model;
 
+    public bool teleported;
+
     [Header("Movement Values")]
     public float topSpeed;
     public float maxSpeedChange;
