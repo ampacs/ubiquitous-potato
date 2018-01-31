@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour {
     public string ambientSound;
     public string respawnSound;
     public bool playerHasWonGame = false;
+    public int maximumNumberOfInteractables;
     public Transform respawnTransform;
     public GameObject playerObject;
     public PlayerHealthManager playerHealthManager;
     private bool _sceneLoaded = false;
     public bool SceneLoaded { get; private set; }
     private string _sceneBeingLoaded;
+    public List<GameObject> interactables;
 
     public void GetPlayer() {
         playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -119,6 +121,11 @@ public class GameManager : MonoBehaviour {
         if (playerHealthManager != null && !playerHealthManager.alive) {
             RespawnPlayer();
             AudioManager.instance.Play(respawnSound);
+        }
+
+        while (interactables.Count > maximumNumberOfInteractables) {
+            interactables[0].GetComponent<InteractableSpawnable>().Deactivate();
+            interactables.RemoveAt(0);
         }
     }
 }
