@@ -18,12 +18,6 @@ public class ActionElementDestroy : BaseAction {
     public override void Deactivate () {
     }
 
-    void Awake() {
-        //particles.Play();
-        actionMoment = Time.time;
-        AudioManager.instance.Play(soundEffects[0]);
-    }
-
     void OnTriggerEnter(Collider other) {
         this.other = other.gameObject;
         if (Condition()) {
@@ -33,7 +27,8 @@ public class ActionElementDestroy : BaseAction {
 
     void Update() {
         if (Time.time - actionMoment > actionTime) {
-            AudioManager.instance.Stop(soundEffects[0]);
+            if (audioSource != null)
+                audioSource.Stop();
             Destroy(this.gameObject);
         }
     }

@@ -17,12 +17,6 @@ public class ActionElementSpawn : BaseAction {
 
     }
 
-    void Awake() {
-        //particles.Play();
-        actionMoment = Time.time;
-        AudioManager.instance.Play(soundEffects[0]);
-    }
-
     void Start() {
         RaycastHit hit;
         if (Physics.Raycast(PlayerController.instance.transform.position + positionOffsetMultiplier*PlayerController.instance.transform.forward, Vector3.down, out hit, 10f)) {
@@ -34,7 +28,8 @@ public class ActionElementSpawn : BaseAction {
 
     void Update() {
         if (Time.time - actionMoment > actionTime) {
-            AudioManager.instance.Stop(soundEffects[0]);
+            if (audioSource != null)
+                audioSource.Stop();
             Destroy(this.gameObject);
         }
     }
