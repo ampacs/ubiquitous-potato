@@ -8,8 +8,12 @@ public class BaseHazard : MonoBehaviour {
     protected bool collidedWithPlayer;
     protected bool triggered;
     protected bool triggeredByPlayer;
+    protected Collision _collisionInfo;
+
+    protected Collider _other;
 
     void OnCollisionEnter(Collision collisionInfo) {
+        _collisionInfo = collisionInfo;
         if (collisionInfo.gameObject.tag.Equals("Player")) {
             if (element == null)
                  collisionInfo.gameObject.GetComponent<PlayerHealthManager>().ApplyDamage(damage);
@@ -20,6 +24,7 @@ public class BaseHazard : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
+        _other = other;
         if (other.transform.tag.Equals("Player")) {
             if (element == null)
                  other.transform.GetComponent<PlayerHealthManager>().ApplyDamage(damage);

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hazards
   - Shield
+  - Prop
   layers:
   - Default
   - TransparentFX
