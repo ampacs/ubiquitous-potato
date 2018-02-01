@@ -30126,6 +30126,11 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114005067409473080, guid: 77284de8dc2bd8449a72b9905220ab59,
+        type: 2}
+      propertyPath: shieldElement
+      value: 
+      objectReference: {fileID: 377643420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77284de8dc2bd8449a72b9905220ab59, type: 2}
   m_IsPrefabParent: 0
