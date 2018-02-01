@@ -5,18 +5,18 @@ public class KeystoneManager : MonoBehaviour {
     public bool activated;
     public BaseElement element;
     public MeshRenderer meshRenderer;
-    public ParticleSystem particleSystem;
+    public ParticleSystem particlesSystem;
     private SphereCollider _collider;
 
     public void Activate () {
-        if (particleSystem != null) particleSystem.Play();
+        if (particlesSystem != null) particlesSystem.Play();
         _collider.enabled = true;
         meshRenderer.enabled = true;
         activated = true;
     }
 
     public void Deactivate () {
-        particleSystem.Stop();
+        particlesSystem.Stop();
         _collider.enabled = false;
         meshRenderer.enabled = false;
         activated = false;

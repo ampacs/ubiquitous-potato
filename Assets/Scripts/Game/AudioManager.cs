@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
@@ -10,7 +8,6 @@ public class AudioManager : MonoBehaviour {
 
     private int _numberOfSounds;
     private AudioSource _audioSource;
-    private GameManager _gameManager;
 
     [System.Serializable]
     public struct Sound {
@@ -189,16 +186,6 @@ public class AudioManager : MonoBehaviour {
                 sounds[i].gameObject = gameObject;
             sounds[i].GenerateAudioSource();
         }
-    }
-
-    // Use this for initialization
-    void Start () {
-        _gameManager = GameManager.instance;
-    }
-    
-    // Update is called once per frame
-    void Update () {
-
     }
 
     void OnValidate() {

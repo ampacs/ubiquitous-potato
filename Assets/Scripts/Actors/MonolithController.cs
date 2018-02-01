@@ -15,7 +15,7 @@ public class MonolithController : Actor {
     public Material[] materials;
     public ParticleSystem[] particleSystems;
 
-    private Material defaultMaterial;
+    //private Material defaultMaterial;
 
     public void Activate () {
         Debug.Log("Activated!");
@@ -71,7 +71,7 @@ public class MonolithController : Actor {
     }
 
     void Start () {
-        defaultMaterial = materials[4];
+        //defaultMaterial = materials[4];
         _meshRenderers = GetComponentsInChildren<MeshRenderer>();
         Debug.Log("** " + _meshRenderers.Length);
         SetMaterialInChildren(materials[4]);

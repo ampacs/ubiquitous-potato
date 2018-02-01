@@ -15,7 +15,8 @@ public class InteractableSpawnable : BaseInteractable {
 
     public void Deactivate () {
         if (particles != null) particles.Stop();
-        GameObject instantiatedGameObject = (GameObject)Instantiate(extraSpawnableGameObject, transform.position, transform.rotation);
+        /*GameObject instantiatedGameObject = (GameObject)*/
+        Instantiate(extraSpawnableGameObject, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

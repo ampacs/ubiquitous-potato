@@ -45,7 +45,7 @@ public class RootMotion : MonoBehaviour {
 
     void OnAnimatorMove() {
         AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        int standingAnimIDs = Animator.StringToHash("Player_Standing");
+        //int standingAnimIDs = Animator.StringToHash("Player_Standing");
         int runningAnimIDs = Animator.StringToHash("Player_Running");
 
 

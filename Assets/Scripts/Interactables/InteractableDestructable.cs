@@ -34,11 +34,11 @@ public class InteractableDestructable : BaseInteractable {
 
     void Update() {
         if (updateOn) {
-            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            int growingAnimID = Animator.StringToHash("Grass_Growing");
-            int dyingAnimID   = Animator.StringToHash("Grass_Dying");
-            int deadAnimID    = Animator.StringToHash("Grass_Dead");
-            int normalAnimID  = Animator.StringToHash("Grass_Normal");
+            //AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            //int growingAnimID = Animator.StringToHash("Grass_Growing");
+            //int dyingAnimID   = Animator.StringToHash("Grass_Dying");
+            //int deadAnimID    = Animator.StringToHash("Grass_Dead");
+            //int normalAnimID  = Animator.StringToHash("Grass_Normal");
 
             if (activateStateChange) {
                 Activate();
