@@ -5,7 +5,7 @@ public class LoopBetweenColors : MonoBehaviour {
 
     public Text text;
     public Color[] colors;
-    public float time;
+    public float multiplier;
     public AnimationCurve colorOverTime;
     private Color _currentTargetColor;
     private Color _currentColor;
@@ -26,11 +26,12 @@ public class LoopBetweenColors : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        _time += Time.deltaTime;
-        _currentColor = Color.Lerp(_currentColor, _currentTargetColor, time * colorOverTime.Evaluate(_time) * Time.deltaTime);
-        if (_currentColor == _currentTargetColor) {
+        _time += multiplier * Time.fixedDeltaTime;
+        if (_time > 1f) {
+            _time -= 1f;
             _currentTargetColor = GetNextTargetColor();
         }
+        _currentColor = Color.Lerp(_currentColor, _currentTargetColor, colorOverTime.Evaluate(_time));
         text.color = _currentColor;
     }
 }
