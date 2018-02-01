@@ -4,6 +4,8 @@ public class ActionElementShield : BaseAction {
 
     GameObject other;
     BaseInteractable interactable;
+    Rigidbody _rigidbody;
+    Rigidbody _playerRigidbody;
 
     public override bool Condition () {
         interactable = other.GetComponent<BaseInteractable>();
@@ -18,12 +20,18 @@ public class ActionElementShield : BaseAction {
     public override void Deactivate () {
     }
 
+    void Start() {
+        _rigidbody = GetComponent<Rigidbody>();
+        _playerRigidbody = PlayerController.instance.gameObject.GetComponent<Rigidbody>();
+    }
+
     void Update() {
         if (Time.time - actionMoment > actionTime) {
             if (audioSource != null)
                 audioSource.Stop();
             Destroy(this.gameObject);
         }
+        _rigidbody.velocity = _playerRigidbody.velocity;
     }
 
     void OnTriggerEnter(Collider other) {
