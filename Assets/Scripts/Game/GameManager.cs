@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour {
     void Start() {
         GetPlayer();
         GetRespawn();
+        Cursor.visible = false;
     }
 
     void Update() {
