@@ -1,66 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum TELEPORT_EXIT_DRECTION
-{
-    North,
-    South,
-    East,
-    West
-}
-
-public static class teleport_exit_directionExtensions
-{
-    public static Vector3 UnitVector(this TELEPORT_EXIT_DRECTION self)
-    {
-        // Replace this with a dictionary or whatever you want ... you get the idea
-        switch (self)
-        {
-            case TELEPORT_EXIT_DRECTION.North:
-                return new Vector3(0, 0, 1.5f);
-            case TELEPORT_EXIT_DRECTION.South:
-                return new Vector3(0, 0, -1.5f);
-            case TELEPORT_EXIT_DRECTION.East:
-                return new Vector3(1.5f, 0, 0);
-            case TELEPORT_EXIT_DRECTION.West:
-                return new Vector3(-1.5f, 0, 0);
-            default:
-                return new Vector3(-0, 0, 0);
-        }
-    }
-}
-
-
+﻿using UnityEngine;
 
 public class ActionTeleport : MonoBehaviour {
 
-    public Transform sideA;
-    public Transform sideB;
+    public Transform destination;
+    public Vector3 offsetPosition = new Vector3(0, 1, 0);
 
+    public bool activated;
     public string teleportSound;
 
-    //private bool jetlag;
-
-    // Use this for initialization
-    void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player" && !PlayerController.instance.teleported) {
             AudioManager.instance.Play(teleportSound);
-            if (this.transform == sideA)
-                other.transform.position = sideB.position + TELEPORT_EXIT_DRECTION.West.UnitVector();
-            else
-                other.transform.position = sideA.position + TELEPORT_EXIT_DRECTION.East.UnitVector();          
+            other.transform.position = destination.position + offsetPosition;
+            PlayerController.instance.teleported = true;
+            activated = true;
         }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (!activated) {
+            PlayerController.instance.teleported = false;
+        } else activated = false;
     }
 }

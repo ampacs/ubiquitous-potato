@@ -54,6 +54,8 @@ MonoBehaviour:
   ambientSound: Ambient
   respawnSound: Respawn
   playerHasWonGame: 0
+  maximumNumberOfInteractables: 5
   respawnTransform: {fileID: 0}
   playerObject: {fileID: 0}
   playerHealthManager: {fileID: 0}
+  interactables: []

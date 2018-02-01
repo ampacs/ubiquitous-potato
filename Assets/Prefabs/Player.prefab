@@ -271,7 +271,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519301902631744}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 361e1ac76b2e1cc48a01df28cb607bbb, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d09ac53d2ef9094b9b6c0837fd56755, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keystone: {fileID: 0}
   model: {fileID: 1519301902631744}
+  teleported: 0
   topSpeed: 4
   maxSpeedChange: 4
   element: {fileID: 0}

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4909993357806460}
   - component: {fileID: 33664965379371670}
   - component: {fileID: 23811531271309370}
+  - component: {fileID: 95844091802396468}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -37,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4310715053500322}
   - component: {fileID: 65286850879758540}
-  - component: {fileID: 54638184060084532}
   - component: {fileID: 114672750540576106}
   m_Layer: 0
   m_Name: Grass
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310701206263062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0.024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4310715053500322}
@@ -114,21 +114,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310701206263062}
   m_Mesh: {fileID: 4300000, guid: 74722accffd4eed4c8d089b86eae0b82, type: 3}
---- !u!54 &54638184060084532
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1495116205774610}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &65286850879758540
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -140,7 +125,24 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!95 &95844091802396468
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310701206263062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e06699a5fa1c5b44bb0d1fa2c869782b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114672750540576106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,3 +162,6 @@ MonoBehaviour:
   centerOfInteraction: {x: 0, y: 0, z: 0}
   directionOfInteraction: {x: 0, y: 0, z: 0}
   interationTime: 1
+  activateStateChange: 0
+  enabledTime: 2
+  respawnTime: 20

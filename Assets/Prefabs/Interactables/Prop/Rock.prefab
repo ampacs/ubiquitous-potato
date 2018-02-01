@@ -173,3 +173,5 @@ MonoBehaviour:
   centerOfInteraction: {x: 0, y: 0, z: 0}
   directionOfInteraction: {x: 0, y: 0, z: 0}
   interationTime: 10000
+  extraSpawnableGameObject: {fileID: 1746883213787312, guid: 96865f478c3ab9c4fa898bf24edf050a,
+    type: 2}
