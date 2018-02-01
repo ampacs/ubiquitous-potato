@@ -20,7 +20,7 @@ public class ActionElementSpawn : BaseAction {
     void Start() {
         RaycastHit hit;
         if (Physics.Raycast(PlayerController.instance.transform.position + positionOffsetMultiplier*PlayerController.instance.transform.forward, Vector3.down, out hit, 10f)) {
-            GameObject instantiatedGameObject = (GameObject)Instantiate(gameObjectToSpawn, PlayerController.instance.transform.position + positionOffsetMultiplier*PlayerController.instance.transform.forward + (hit.distance-0.5f)*Vector3.down, transform.rotation);
+            GameObject instantiatedGameObject = (GameObject)Instantiate(gameObjectToSpawn, PlayerController.instance.transform.position + positionOffsetMultiplier*PlayerController.instance.transform.forward + hit.distance*Vector3.down, transform.rotation);
             GameManager.instance.interactables.Add(instantiatedGameObject);
         } else {
             Destroy(this.gameObject);

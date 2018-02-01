@@ -13,7 +13,7 @@ public class PlayerController : Actor {
     public float topSpeed;
     public float maxSpeedChange;
 
-    public BaseElement element;
+    public List<BaseElement> elements;
     private Animator _animator;
 
     private Vector3 _targetVelocity;
@@ -51,8 +51,8 @@ public class PlayerController : Actor {
         int standingAnimIDs = Animator.StringToHash("Player_Standing");
         int runningAnimIDs = Animator.StringToHash("Player_Running");
 
-        if (element != null && Input.GetButtonDown("Submit")) {
-            element.Activate();
+        if (elements != null && elements.Count > 0 && Input.GetButtonDown("Submit")) {
+            elements[0].Activate();
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
@@ -65,17 +65,17 @@ public class PlayerController : Actor {
             }
         }
 
-        if (element == null) {
+        if (elements == null || elements.Count == 0) {
             receptorLight.enabled = false;
             receptorMeshReceptor.enabled = false;
             receptorParticleSystem.Stop();
         } else {
             receptorLight.enabled = true;
-            receptorLight.color = element.elementMaterial.color;
+            receptorLight.color = elements[0].elementMaterial.color;
             receptorMeshReceptor.enabled = true;
-            receptorMeshReceptor.material = element.elementMaterial;
+            receptorMeshReceptor.material = elements[0].elementMaterial;
             ParticleSystem.MainModule mainModule =  receptorParticleSystem.main;
-            mainModule.startColor = element.elementMaterial.color;
+            mainModule.startColor = elements[0].elementMaterial.color;
             receptorParticleSystem.Play();
         }
     }

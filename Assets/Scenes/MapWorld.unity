@@ -4800,7 +4800,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4501477162348764, guid: f38bceada8466f8478998ec3afff84d6, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1717631016566032, guid: f38bceada8466f8478998ec3afff84d6, type: 2}
       propertyPath: m_IsActive
@@ -6872,7 +6872,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4858225614912362, guid: cf1530cf27026b04794373fb2c8678e5, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114629024200768474, guid: cf1530cf27026b04794373fb2c8678e5,
         type: 2}
@@ -16899,7 +16899,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4764426743376308, guid: f9c0e5ca147bdad4da8c378225e6524a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114629535587204580, guid: f9c0e5ca147bdad4da8c378225e6524a,
         type: 2}
@@ -22113,15 +22113,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1029518559581314, guid: a25185afe96f4844f826ac7ea52d81ca, type: 2}
-      propertyPath: m_Name
-      value: Keystone_Earth (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 114883696377361730, guid: a25185afe96f4844f826ac7ea52d81ca,
         type: 2}
       propertyPath: element
       value: 
       objectReference: {fileID: 59552608}
+    - target: {fileID: 1029518559581314, guid: a25185afe96f4844f826ac7ea52d81ca, type: 2}
+      propertyPath: m_Name
+      value: Keystone_Earth (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a25185afe96f4844f826ac7ea52d81ca, type: 2}
   m_IsPrefabParent: 0
@@ -37261,7 +37261,7 @@ Transform:
   - {fileID: 1633614232}
   - {fileID: 1014852486}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1562705428
 Prefab:
@@ -42722,16 +42722,6 @@ Prefab:
       propertyPath: element
       value: 
       objectReference: {fileID: 825346811}
-    - target: {fileID: 135197670534063778, guid: 1899fcb094e1e4c43ad721cf5a7d0eef,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135197670534063778, guid: 1899fcb094e1e4c43ad721cf5a7d0eef,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1899fcb094e1e4c43ad721cf5a7d0eef, type: 2}
   m_IsPrefabParent: 0

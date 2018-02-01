@@ -11,19 +11,27 @@ public class MonolithContactTrigger : MonoBehaviour {
             if (monolithController.activated) {
                 monolithController.Deactivate();
                 GameObject keystoneHolderTemp = other.gameObject.GetComponent<PlayerController>().keystone;
+
                 monolithController.keystone.GetComponent<KeystoneManager>().Deactivate();
+                monolithController.keystone.GetComponent<KeystoneManager>().rotate = true;
+                monolithController.keystone.GetComponent<KeystoneManager>().target = other.transform;
                 other.gameObject.GetComponent<PlayerController>().keystone = monolithController.keystone;
                 monolithController.keystone.GetComponent<KeystoneManager>().RemoveElementFromPlayer();
+
                 monolithController.keystone = keystoneHolderTemp;
                 if (monolithController.keystone != null) {
-                    monolithController.keystone.transform.position = transform.position + monolithController.keystoneOffset;
+                    monolithController.keystone.GetComponent<KeystoneManager>().rotate = false;
+                    monolithController.keystone.GetComponent<KeystoneManager>().offset = monolithController.keystoneOffset;
+                    monolithController.keystone.GetComponent<KeystoneManager>().target = transform;
                     monolithController.keystone.GetComponent<KeystoneManager>().Activate();
                     monolithController.Activate();
                 }
             } else if (other.gameObject.GetComponent<PlayerController>().keystone != null) {
                 monolithController.keystone = other.gameObject.GetComponent<PlayerController>().keystone;
                 other.gameObject.GetComponent<PlayerController>().keystone = null;
-                monolithController.keystone.transform.position = transform.position + monolithController.keystoneOffset;
+                monolithController.keystone.GetComponent<KeystoneManager>().rotate = false;
+                monolithController.keystone.GetComponent<KeystoneManager>().offset = monolithController.keystoneOffset;
+                monolithController.keystone.GetComponent<KeystoneManager>().target = transform;
                 monolithController.keystone.GetComponent<KeystoneManager>().Activate();
                 monolithController.Activate();
             }

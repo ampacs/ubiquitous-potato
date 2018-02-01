@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029518559581314}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.33, y: 1.13, z: 3.58}
+  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.97, y: 0.16, z: 11.92}
   m_LocalScale: {x: 0.002006896, y: 0.0018544878, z: 0.002006895}
   m_Children:
   - {fileID: 4531677169070436}
@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 1
-  element: {fileID: 114334705224859806, guid: 0a8f8d648ec34b745b7f291a30ce6dbb, type: 2}
+  angularSpeed: 15
+  spacing: 1
+  element: {fileID: 0}
   meshRenderer: {fileID: 23832088901803170}
   particlesSystem: {fileID: 198229777867917204}
 --- !u!135 &135796355580840646
