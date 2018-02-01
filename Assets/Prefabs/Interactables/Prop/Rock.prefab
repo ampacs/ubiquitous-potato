@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471786206046660}
   - component: {fileID: 65742606002344298}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4112947912767608}
   - component: {fileID: 33855458801825830}
   - component: {fileID: 23064980114929802}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921963278147390}
   - component: {fileID: 114593025205450784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
