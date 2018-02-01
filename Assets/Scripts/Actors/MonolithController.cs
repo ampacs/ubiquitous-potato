@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MonolithController : Actor {
 
@@ -81,9 +79,5 @@ public class MonolithController : Actor {
         } else {
             Deactivate();
         }
-    }
-
-    void FixedUpdate() {
-
     }
 }

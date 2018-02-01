@@ -8,6 +8,8 @@ public class BaseElement : MonoBehaviour {
 
     public GameObject action;
 
+    public Material elementMaterial;
+
     public ElementType type { get; protected set; }
     [SerializeField]
     protected ElementType _type;

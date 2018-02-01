@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 1747691403750152, guid: 5fd576bcb8689e349829b5adcf49af04, type: 2}
+  elementMaterial: {fileID: 2100000, guid: 799ef5fc458bd7540aa224d51c0c80b5, type: 2}
   _type: 2

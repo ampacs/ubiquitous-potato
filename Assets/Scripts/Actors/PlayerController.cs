@@ -20,6 +20,11 @@ public class PlayerController : Actor {
     private Vector3 _lookDirection;
     private Rigidbody _rigidbody;
 
+    public GameObject receptor;
+    private Light receptorLight;
+    private MeshRenderer receptorMeshReceptor;
+    private ParticleSystem receptorParticleSystem;
+
     void Awake () {
         if (instance == null) {
             instance = this;
@@ -36,6 +41,9 @@ public class PlayerController : Actor {
         _rigidbody = GetComponent<Rigidbody>();
         //keystones = new List<Keystone>();
         //elements  = new List<BaseElement>();
+        receptorLight = receptor.GetComponent<Light>();
+        receptorMeshReceptor = receptor.GetComponent<MeshRenderer>();
+        receptorParticleSystem = receptor.GetComponent<ParticleSystem>();
     }
 
     void Update () {
@@ -44,7 +52,6 @@ public class PlayerController : Actor {
         int runningAnimIDs = Animator.StringToHash("Player_Running");
 
         if (element != null && Input.GetButtonDown("Submit")) {
-            Debug.Log("SUMMON");
             element.Activate();
         }
 
@@ -56,6 +63,20 @@ public class PlayerController : Actor {
             if (stateInfo.shortNameHash == runningAnimIDs) {
                 _animator.SetTrigger("StopMoving");
             }
+        }
+
+        if (element == null) {
+            receptorLight.enabled = false;
+            receptorMeshReceptor.enabled = false;
+            receptorParticleSystem.Stop();
+        } else {
+            receptorLight.enabled = true;
+            receptorLight.color = element.elementMaterial.color;
+            receptorMeshReceptor.enabled = true;
+            receptorMeshReceptor.material = element.elementMaterial;
+            ParticleSystem.MainModule mainModule =  receptorParticleSystem.main;
+            mainModule.startColor = element.elementMaterial.color;
+            receptorParticleSystem.Play();
         }
     }
     
