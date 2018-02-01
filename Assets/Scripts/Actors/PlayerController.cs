@@ -44,6 +44,7 @@ public class PlayerController : Actor {
         int runningAnimIDs = Animator.StringToHash("Player_Running");
 
         if (element != null && Input.GetButtonDown("Submit")) {
+            Debug.Log("SUMMON");
             element.Activate();
         }
 

@@ -129,7 +129,7 @@ MonoBehaviour:
   activated: 1
   element: {fileID: 114160568964363672, guid: a05776e5106c24240860722782a2030a, type: 2}
   meshRenderer: {fileID: 23425410470119628}
-  particleSystem: {fileID: 198375413988537818}
+  particlesSystem: {fileID: 198375413988537818}
 --- !u!135 &135943540998937362
 SphereCollider:
   m_ObjectHideFlags: 1

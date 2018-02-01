@@ -16,7 +16,7 @@ public class KeystoneManager : MonoBehaviour {
     }
 
     public void Deactivate () {
-        particlesSystem.Stop();
+        if (particlesSystem != null) particlesSystem.Stop();
         _collider.enabled = false;
         meshRenderer.enabled = false;
         activated = false;
@@ -41,7 +41,6 @@ public class KeystoneManager : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.transform.tag == "Player" && other.GetComponent<PlayerController>().keystone == null) {
-            Debug.Log("here");
             other.GetComponent<PlayerController>().keystone = this.gameObject;
             Deactivate();
         }
