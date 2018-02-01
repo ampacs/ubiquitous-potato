@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public bool playerHasWonGame = false;
     public int maximumNumberOfInteractables;
     public Transform respawnTransform;
+    public Transform teleportTransform;
     public GameObject playerObject;
     public PlayerHealthManager playerHealthManager;
     private bool _sceneLoaded = false;
@@ -28,6 +29,13 @@ public class GameManager : MonoBehaviour {
         GameObject respawn = GameObject.FindGameObjectWithTag("Respawn");
         if (respawn != null) {
             respawnTransform = respawn.transform;
+        }
+    }
+
+    public void GetTeleport() {
+        GameObject teleport = GameObject.FindGameObjectWithTag("Teleport");
+        if (teleport != null) {
+            teleportTransform = teleport.transform;
         }
     }
 
@@ -57,6 +65,7 @@ public class GameManager : MonoBehaviour {
         _sceneBeingLoaded = gameLevel;
         GetPlayer();
         GetRespawn();
+        GetTeleport();
     }
 
     public void LoadScene (int gameLevel){
@@ -65,6 +74,7 @@ public class GameManager : MonoBehaviour {
         _sceneBeingLoaded = SceneManager.GetSceneByBuildIndex(gameLevel).name;
         GetPlayer();
         GetRespawn();
+        GetTeleport();
     }
 
     public void ReloadScene () {
@@ -98,6 +108,9 @@ public class GameManager : MonoBehaviour {
         if (respawnTransform == null) {
             GetRespawn();
         }
+        if (teleportTransform == null) {
+            GetTeleport();
+        }
 
         if (GetCurrentLevel() == "Menu") {
             if (Input.GetButtonDown("Submit")) {
@@ -107,6 +120,9 @@ public class GameManager : MonoBehaviour {
         } else {
             if (Input.GetButtonDown("Cancel")) {
                 LoadScene("Menu");
+            }
+            if (Input.GetKeyDown(KeyCode.T) && teleportTransform != null) {
+                PlayerController.instance.transform.position = teleportTransform.position;
             }
             if (!AudioManager.instance.IsPlaying(ambientSound)) {
                 AudioManager.instance.Play(ambientSound);
