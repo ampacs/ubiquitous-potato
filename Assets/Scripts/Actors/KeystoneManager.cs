@@ -19,14 +19,12 @@ public class KeystoneManager : MonoBehaviour {
 
     public void Activate () {
         //if (particlesSystem != null) particlesSystem.Play();
-        _collider.enabled = true;
         //meshRenderer.enabled = true;
         activated = true;
     }
 
     public void Deactivate () {
         //if (particlesSystem != null) particlesSystem.Stop();
-        _collider.enabled = false;
         //meshRenderer.enabled = false;
         activated = false;
     }
@@ -65,6 +63,7 @@ public class KeystoneManager : MonoBehaviour {
             target = PlayerController.instance.gameObject.transform;
             rotate = true;
             other.GetComponent<PlayerController>().keystone = this.gameObject;
+            _collider.enabled = false;
             Deactivate();
         }
     }

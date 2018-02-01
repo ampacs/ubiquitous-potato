@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonolithContactTrigger : MonoBehaviour {
-
     public MonolithController monolithController;
 
     void OnTriggerStay(Collider other) {

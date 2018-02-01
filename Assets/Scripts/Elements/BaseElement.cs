@@ -42,7 +42,8 @@ public class BaseElement : MonoBehaviour {
 
     public void Activate () {
         BaseAction baseAction = action.GetComponent<BaseAction>();
-        GameObject currentAction = (GameObject)Instantiate(action, PlayerController.instance.transform.position + baseAction.positionOffsetMultiplier * PlayerController.instance.transform.forward, Quaternion.LookRotation(PlayerController.instance.transform.forward));
+        /*GameObject currentAction = (GameObject)*/
+        Instantiate(action, PlayerController.instance.transform.position + baseAction.positionOffsetMultiplier * PlayerController.instance.transform.forward, Quaternion.LookRotation(PlayerController.instance.transform.forward));
     }
 
     void Awake() {
