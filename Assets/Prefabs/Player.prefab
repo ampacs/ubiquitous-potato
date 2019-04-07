@@ -36,11 +36,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4006987168620726}
+  - component: {fileID: 81256656619476816}
   - component: {fileID: 136298495249657830}
   - component: {fileID: 54838786689643096}
   - component: {fileID: 114147127003635654}
-  - component: {fileID: 114005067409473080}
   - component: {fileID: 114752488971258424}
+  - component: {fileID: 114005067409473080}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -75,6 +76,7 @@ GameObject:
   - component: {fileID: 4409191179054940}
   - component: {fileID: 33732835700650382}
   - component: {fileID: 23558289756040744}
+  - component: {fileID: 95348501160638210}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -338,6 +340,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!81 &81256656619476816
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204587027151822}
+  m_Enabled: 1
+--- !u!95 &95348501160638210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1769893060028462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95493859893951242
 Animator:
   serializedVersion: 3
